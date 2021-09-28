@@ -1,6 +1,7 @@
 const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 const mongoose = require('mongoose')
+const PORT = 4000
 
 
 
@@ -39,8 +40,8 @@ async function startApolloServer() {
     server.applyMiddleware({ app })
 
 
-    app.listen({ port: 4000 }, () => {
-        console.log(`Server ready at http://localhost:4000${server.graphqlPath}`)
+    app.listen({ port: PORT }, () => {
+        console.log(`Server ready at http://localhost:${PORT}{server.graphqlPath}`)
     })
 
     return { server, app }
